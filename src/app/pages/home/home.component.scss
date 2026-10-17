@@ -1,9 +1,15 @@
+:host {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .page-container {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   text-align: center;
   padding: 2rem;
 
@@ -11,10 +17,12 @@
     font-size: 2.5rem;
     margin: 0 0 0.75rem;
     font-weight: 700;
+    color: var(--wh-green-dark);
   }
 
   p {
-    color: #666;
+    color: var(--wh-text);
+    opacity: 0.8;
     font-size: 1.15rem;
     margin: 0;
   }

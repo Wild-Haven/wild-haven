@@ -1,7 +1,15 @@
-// Include theming for Angular Material with `mat.theme()`.
-// This Sass mixin defines CSS variables that are used for styling Angular Material
-// components according to the Material 3 design spec.
 @use '@angular/material' as mat;
+
+:root {
+  --wh-green: #497265;
+  --wh-green-dark: #2c473e;
+  --wh-green-deep: #1e322b;
+  --wh-cream: #f8f4ec;
+  --wh-beige: #e6d7be;
+  --wh-brown: #8a563c;
+  --wh-brown-hover: #a4684a;
+  --wh-text: #2b211c;
+}
 
 html {
   @include mat.theme((
@@ -14,19 +22,24 @@ html {
   ));
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   color-scheme: light;
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
-  margin: 0;
+  background-color: var(--wh-cream);
+  color: var(--wh-text);
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-html, body {
-  height: 100%;
-  touch-action: manipulation;
-  -webkit-text-size-adjust: 100%;
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 *, *::before, *::after {

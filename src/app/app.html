@@ -1,19 +1,32 @@
 <header class="site-header">
   <nav class="navbar">
-    <a routerLink="/" class="brand">
+    <a routerLink="/" class="brand" (click)="closeMenu()">
       <img src="wild_haven_logo.avif" class="brand-logo" />
       <span class="brand-name">Wild Haven</span>
     </a>
 
-    <ul class="nav-links">
-      <li><a routerLink="/">Accueil</a></li>
-      <li><a routerLink="/evenements">Événements</a></li>
-      <li><a routerLink="/association">L'Association</a></li>
-      <li><a routerLink="/contact">Contact</a></li>
-    </ul>
+    <button
+      type="button"
+      class="burger-btn"
+      [class.open]="isMenuOpen()"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-    <div class="nav-cta">
-      <a href="#" class="btn-join">Nous rejoindre</a>
+    <div class="nav-menu" [class.open]="isMenuOpen()">
+      <ul class="nav-links">
+        <li><a routerLink="/" (click)="closeMenu()">Accueil</a></li>
+        <li><a routerLink="/evenements" (click)="closeMenu()">Événements</a></li>
+        <li><a routerLink="/association" (click)="closeMenu()">L'Association</a></li>
+        <li><a routerLink="/contact" (click)="closeMenu()">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#" class="btn-join" (click)="closeMenu()">Nous rejoindre</a>
+      </div>
     </div>
   </nav>
 </header>
