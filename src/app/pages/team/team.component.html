@@ -1,0 +1,26 @@
+<main class="team-page">
+  <header class="team-header">
+    <h1>Notre équipe</h1>
+  </header>
+
+  <section class="team-grid">
+    @for (member of members; track member.name) {
+      <article class="member-card">
+        <div class="member-photo">
+          <img [src]="member.image" [alt]="member.name" />
+        </div>
+
+        <div class="member-info">
+          <h2 class="member-name">{{ member.name }}</h2>
+          <p class="member-role">{{ member.role }}</p>
+          <p class="member-description">{{ member.description }}</p>
+          @if (member.link) {
+            <a [href]="member.link" target="_blank" rel="noopener" class="member-link">
+              Mes réseaux
+            </a>
+          }
+        </div>
+      </article>
+    }
+  </section>
+</main>

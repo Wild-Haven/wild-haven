@@ -20,7 +20,16 @@
       <ul class="nav-links">
         <li><a routerLink="/" (click)="closeMenu()">Accueil</a></li>
         <li><a routerLink="/evenements" (click)="closeMenu()">Événements</a></li>
-        <li><a routerLink="/association" (click)="closeMenu()">L'Association</a></li>
+        <li class="dropdown" [class.open]="isAssoOpen()">
+          <span class="dropdown-trigger" (click)="toggleAssoMenu()">
+            L'Association <span class="arrow">▾</span>
+          </span>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/a-propos" (click)="closeMenu()">À propos</a></li>
+            <li><a routerLink="/equipe" (click)="closeMenu()">Notre équipe</a></li>
+          </ul>
+        </li>
+
         <li><a routerLink="/contact" (click)="closeMenu()">Contact</a></li>
       </ul>
 
