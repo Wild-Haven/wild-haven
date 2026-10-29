@@ -40,7 +40,8 @@ export class TeamComponent {
       name: 'Erkiel',
       role: 'Trésorier',
       image: 'erkiel.png',
-      description: ''
+      description: '',
+      link: 'https://linktr.ee/erkiel_'
     }
   ];
 }
